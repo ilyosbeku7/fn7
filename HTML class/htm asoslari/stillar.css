@@ -1,0 +1,32 @@
+
+table , th, td, tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+}
+p {
+    
+    color: rgb(100, 0, 20);
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+ul {
+    list-style: lower-greek;
+}
+a{
+    text-decoration: none;
+}
+h1 {
+    color: blueviolet; 
+    text-align: center;
+    font-weight:500;
+}
+ 
+input{
+     width:  50%;
+     border: 1px solid brown;
+     padding: 20px;
+     
+}
