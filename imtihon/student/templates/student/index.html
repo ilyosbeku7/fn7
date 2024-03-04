@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="main">
+  <div class="container_12">
+    <div class="grid_12">
+      <div class="slider-relative">
+        <div class="slider-block">
+          <div class="slider"> <a href="#" class="prev"></a><a href="#" class="next"></a>
+            <ul class="items">
+              <li><img src="{% static 'student/images/slide.jpg'%}" alt="">
+                <div class="banner">
+                  <div>Sayohat Uchun joylar ko'p</div>
+                  <br>
+                  <span> Bular esa ko'rishga arziydi</span> </div>
+              </li>
+              <li><img src="{% static 'student/images/slide1.jpg'%}" alt=""></li>
+              <li><img src="{% static 'student/images/slide2.jpg'%}" alt=""></li>
+              <li><img src="{% static 'student/images/slide3.jpg'%}" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="container_12">
+      <div class="grid_12">
+        <h3>Mavjud Sayohatlar</h3>
+      </div>
+      <div class="boxes">
+        {% for city in cities %}
+        <div style="margin-left: 10px; margin-top: 20px;" class="grid_4">
+          <figure>
+            <div><img style="width: 100%; height: 300px;" src="{{city.Image.url}}" alt=""></div>
+            <figcaption>
+              <h3>{{city.name}}</h3>
+              To'liq ma'lumot uchun 'Batafsil' tugmasini bosin <a href="{% url 'about' city.id %}" class="btn">Batafsil</a> </figcaption>
+          </figure>
+        </div>
+        {% endfor %}
+       
+        <div class="clear"></div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="grid_12">
+            <h3>Biz uyushtirgan sayohtalar</h3>
+          </div>
+          <div   id="list-example" class="list-group">
+           <h5> <a style="margin-left: 10px; margin-top: 10px;" class="list-group-item list-group-item-action" href="#list-item-1"> Asia sayohatlari</a></h5>
+           <h5> <a  style="margin-left: 10px; margin-top: 10px;"class="list-group-item list-group-item-action" href="#list-item-2">Europa sayohatlari </a></h5>
+           <h5> <a  style="margin-left: 10px; margin-top: 10px;" class="list-group-item list-group-item-action" href="#list-item-3">Haj sayohatlari </a></h5>
+            
+          </div>
+        </div>
+        <div class="col-8">
+          <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            
+            <div style="text-align: center; ">
+                <h4 id="list-item-1">Europa</h4>
+                <img style="width: 500px ; height: 400px; margin-left: 10px; "  src="{% static 'student/images/samarqand.jpg'%}" alt="">
+                <img style="width: 500px; height: 400px; margin-left: 10px;  "  src="{% static 'student/images/Tajmahal.jpg'%}" alt="">
+                <p style="margin-top: 10px ;">Bizga Osiyoga bo'lgan sayohat juda yoqdi service hizmati alo darajada. Udshbu sayohat uchun sizlardan minnatdorman</p>   
+            </div>
+            <div style="text-align: center;">
+              <h4 id="list-item-2">Asia</h4>
+              <img style="width: 50%;"  src="{% static 'student/images/rim.jpg'%}" alt="">
+              <p style="margin-top: 10px;">Menga Rim shariga bo'lgan sayohat judayoqdi yo'ldagi qulaylikar ham juda yaxshi syohat ucuhun sizlarga rahmat</p>
+             
+            </div>
+            <div style="text-align: center;">
+              <h4 id="list-item-3">Haj</h4>
+              <img style="width: 50%;" src="{% static 'student/images/umra.jpg'%}" alt="">
+              <p>Umraga bo'lgan safarimiz yaxshi o'tdi sizlarga ham ushbu firma orqali borishni tavsiya qilaman </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="clear"></div>
+    </div>
+  </div>
+  
+{% endblock %}
